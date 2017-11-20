@@ -27,5 +27,22 @@ namespace Bank.Services
                 db.SaveChanges();
             }
         }
+        
+        public Accounts GetAccount(int num, int pin)
+        {
+            using (BankDBEntities db = new BankDBEntities())
+            {
+                return
+                    db
+                       .Accounts
+                       .Where(e => e.AccountNumber == num && e.PIN == pin)
+                       .Single();
+            }
+        }
+
+        //public void MakeDeposit(Accounts model)
+        //{
+
+        //}
     }
 }

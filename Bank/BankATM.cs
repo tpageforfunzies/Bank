@@ -21,7 +21,8 @@ namespace Bank
             }
             else
             {
-                Console.WriteLine("ok then");
+                LogIn();
+
             }
 
         }
@@ -72,6 +73,35 @@ namespace Bank
 
             BankService svc = new BankService();
             svc.CreateAccount(account);
+        }
+
+        public static void LogIn()
+        {
+            Console.WriteLine("What is your account number?");
+            int accountInput = Int32.Parse(Console.ReadLine());
+
+            Console.WriteLine("What is the pin for your account?");
+            int pinInput = Int32.Parse(Console.ReadLine());
+
+            BankService svc = new BankService();
+            var userAccount = svc.GetAccount(accountInput, pinInput);
+            AccountInfo(userAccount);
+        }
+
+        public static void AccountInfo(Accounts account)
+        {
+            Console.Clear();
+            Console.WriteLine("Your Account Information:");
+            Console.WriteLine("Account Number: " + account.AccountNumber);
+            if (account.AccountType == 1)
+            {
+                Console.WriteLine("Account Type: Checking");
+            }
+            else
+            {
+                Console.WriteLine("Account Type: Savings");
+            }
+            Console.WriteLine("Account Balance: " + account.Balance);
         }
 
     }
