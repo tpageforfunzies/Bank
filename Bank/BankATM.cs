@@ -5,11 +5,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Bank
 {
     public class BankATM
     {
+        public static Accounts CurrentUser { get; set; }
+
         public static void Start()
         {
             Console.WriteLine("Do you have an account?");
@@ -22,7 +25,30 @@ namespace Bank
             else
             {
                 LogIn();
+                Menu();
+                string menuChoice = Console.ReadLine();
+                while (menuChoice != "9")
+                {
+                    switch (menuChoice)
+                    {
+                        case "3":
+                            Console.Clear();
+                            AccountInfo(CurrentUser);
+                            Thread.Sleep(3000);
+                            Console.Clear();
+                            Menu();
+                            menuChoice = Console.ReadLine();
+                            break;
 
+                        case "9":
+                            Console.Clear();
+                            Console.WriteLine("Goodbye.");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+                
             }
 
         }
@@ -42,7 +68,7 @@ namespace Bank
                     LastName = userLastName
                 };
 
-            BankService svc = new BankService();
+            CustomerService svc = new CustomerService();
             svc.CreateCustomer(user);
             NewAccountInfo(user.CustomerID);
         }
@@ -71,7 +97,7 @@ namespace Bank
                     Balance = 0
                 };
 
-            BankService svc = new BankService();
+            AccountService svc = new AccountService();
             svc.CreateAccount(account);
         }
 
@@ -83,17 +109,17 @@ namespace Bank
             Console.WriteLine("What is the pin for your account?");
             int pinInput = Int32.Parse(Console.ReadLine());
 
-            BankService svc = new BankService();
-            var userAccount = svc.GetAccount(accountInput, pinInput);
-            AccountInfo(userAccount);
+            AccountService svc = new AccountService();
+            CurrentUser = svc.GetAccount(accountInput, pinInput);
+            
         }
 
-        public static void AccountInfo(Accounts account)
+        public static void AccountInfo(Accounts currentUser)
         {
             Console.Clear();
             Console.WriteLine("Your Account Information:");
-            Console.WriteLine("Account Number: " + account.AccountNumber);
-            if (account.AccountType == 1)
+            Console.WriteLine("Account Number: " + currentUser.AccountNumber);
+            if (currentUser.AccountType == 1)
             {
                 Console.WriteLine("Account Type: Checking");
             }
@@ -101,7 +127,18 @@ namespace Bank
             {
                 Console.WriteLine("Account Type: Savings");
             }
-            Console.WriteLine("Account Balance: " + account.Balance);
+            Console.WriteLine("Account Balance: " + currentUser.Balance);
+        }
+
+        public static void Menu()
+        {
+            Console.WriteLine("***********************************************************");
+            Console.WriteLine("Please choose an option from the ones below");
+            Console.WriteLine("1.  Make a deposit");
+            Console.WriteLine("2.  Make a withdrawal");
+            Console.WriteLine("3.  Get account information");
+            Console.WriteLine("9. Exit");
+            Console.WriteLine("***********************************************************");
         }
 
     }

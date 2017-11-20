@@ -10,8 +10,12 @@ namespace Bank
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("WELCOME TO THE FIRST NATIONAL BANK OF TPAGE");
-            Console.WriteLine("PRESS ANY BUTTON TO CONTINUE");
+            Console.WriteLine("         _._._                       _._._");
+            Console.WriteLine("        _|   |_                     _|   |_");
+            Console.WriteLine("        | ... |_._._._._._._._._._._| ... |");
+            Console.WriteLine("        | ||| |  o NATIONAL BANK o  | ||| |");
+            Console.WriteLine("     WELCOME TO THE FIRST NATIONAL BANK OF TPAGE");
+            Console.WriteLine("           PRESS ANY BUTTON TO CONTINUE");
             Console.ReadLine();
             Console.Clear();
             BankATM.Start();
