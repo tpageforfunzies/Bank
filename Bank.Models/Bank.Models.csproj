@@ -52,8 +52,6 @@
     <Compile Include="Accounts.cs">
       <DependentUpon>BankModels.tt</DependentUpon>
     </Compile>
-    <Compile Include="BankAccount.cs" />
-    <Compile Include="BankDeposit.cs" />
     <Compile Include="BankModels.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -69,9 +67,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BankModels.edmx</DependentUpon>
     </Compile>
-    <Compile Include="BankTransaction.cs" />
-    <Compile Include="BankUser.cs" />
-    <Compile Include="BankWithdrawal.cs" />
     <Compile Include="Customers.cs">
       <DependentUpon>BankModels.tt</DependentUpon>
     </Compile>

@@ -17,7 +17,7 @@ namespace Bank
             if (hasAccount == "no")
             {
                 Console.WriteLine("We'll begin with your info, then your account info.");
-                GetCustomerInfo();
+                NewCustomerInfo();
             }
             else
             {
@@ -26,12 +26,14 @@ namespace Bank
 
         }
 
-        public static void GetCustomerInfo()
+        public static void NewCustomerInfo()
         {
             Console.WriteLine("What is your first name");
             string userFirstName = Console.ReadLine();
+
             Console.WriteLine("What is your last name?");
             string userLastName = Console.ReadLine();
+
             Customers user =
                 new Customers
                 {
@@ -41,11 +43,11 @@ namespace Bank
 
             BankService svc = new BankService();
             svc.CreateCustomer(user);
-            GetAccountInfo(user.CustomerID);
+            NewAccountInfo(user.CustomerID);
         }
 
 
-        public static void GetAccountInfo(int id)
+        public static void NewAccountInfo(int id)
         {
             Console.WriteLine("Which kind of account would you like?");
             Console.WriteLine("1 -- Checking");
