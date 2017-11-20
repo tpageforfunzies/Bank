@@ -87,32 +87,30 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.Config" />
     <EntityDeploy Include="BankModels.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>BankModels.Designer.cs</LastGenOutput>
     </EntityDeploy>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.Config" />
     <None Include="BankModels.edmx.diagram">
       <DependentUpon>BankModels.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
     <Content Include="BankModels.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BankModels.Context.cs</LastGenOutput>
       <DependentUpon>BankModels.edmx</DependentUpon>
+      <LastGenOutput>BankModels.Context.cs</LastGenOutput>
     </Content>
     <Content Include="BankModels.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>BankModels.edmx</DependentUpon>
       <LastGenOutput>BankModels.cs</LastGenOutput>
     </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

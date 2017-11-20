@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="AccountID" />
           </Key>
-          <Property Name="AccountID" Type="int" Nullable="false" />
+          <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AccountNumber" Type="int" Nullable="false" />
           <Property Name="PIN" Type="int" Nullable="false" />
           <Property Name="AccountType" Type="int" Nullable="false" />
@@ -20,7 +20,7 @@
           <Key>
             <PropertyRef Name="CustomerID" />
           </Key>
-          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="FirstName" Type="nvarchar" MaxLength="25" Nullable="false" />
           <Property Name="LastName" Type="nvarchar" MaxLength="25" Nullable="false" />
         </EntityType>
@@ -28,7 +28,7 @@
           <Key>
             <PropertyRef Name="DepositID" />
           </Key>
-          <Property Name="DepositID" Type="int" Nullable="false" />
+          <Property Name="DepositID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TransactionID" Type="int" Nullable="false" />
           <Property Name="Amount" Type="money" Nullable="false" />
         </EntityType>
@@ -36,7 +36,7 @@
           <Key>
             <PropertyRef Name="TransactionID" />
           </Key>
-          <Property Name="TransactionID" Type="int" Nullable="false" />
+          <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TransactionType" Type="int" Nullable="false" />
           <Property Name="AccountID" Type="int" Nullable="false" />
         </EntityType>
@@ -44,7 +44,7 @@
           <Key>
             <PropertyRef Name="WithdrawalID" />
           </Key>
-          <Property Name="WithdrawalID" Type="int" Nullable="false" />
+          <Property Name="WithdrawalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TransactionID" Type="int" Nullable="false" />
           <Property Name="Amount" Type="money" Nullable="false" />
         </EntityType>
@@ -136,19 +136,20 @@
           <Key>
             <PropertyRef Name="AccountID" />
           </Key>
-          <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <Property Name="AccountID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="AccountNumber" Type="Int32" Nullable="false" />
           <Property Name="PIN" Type="Int32" Nullable="false" />
           <Property Name="AccountType" Type="Int32" Nullable="false" />
           <Property Name="CustomerID" Type="Int32" Nullable="false" />
           <Property Name="Balance" Type="Int32" />
           <NavigationProperty Name="Customers" Relationship="Self.FK_dbo_Accounts_dbo_Customer_CustomerID" FromRole="Accounts" ToRole="Customers" />
+          <NavigationProperty Name="Transactions" Relationship="Self.FK_dbo_Transactions_dbo_Accounts_AccountID" FromRole="Accounts" ToRole="Transactions" />
         </EntityType>
         <EntityType Name="Customers">
           <Key>
             <PropertyRef Name="CustomerID" />
           </Key>
-          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="FirstName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="LastName" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Accounts" Relationship="Self.FK_dbo_Accounts_dbo_Customer_CustomerID" FromRole="Customers" ToRole="Accounts" />
@@ -157,7 +158,7 @@
           <Key>
             <PropertyRef Name="DepositID" />
           </Key>
-          <Property Name="DepositID" Type="Int32" Nullable="false" />
+          <Property Name="DepositID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TransactionID" Type="Int32" Nullable="false" />
           <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="Transactions" Relationship="Self.FK_dbo_Deposits_dbo_Transactions" FromRole="Deposits" ToRole="Transactions" />
@@ -166,9 +167,10 @@
           <Key>
             <PropertyRef Name="TransactionID" />
           </Key>
-          <Property Name="TransactionID" Type="Int32" Nullable="false" />
+          <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TransactionType" Type="Int32" Nullable="false" />
           <Property Name="AccountID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Accounts" Relationship="Self.FK_dbo_Transactions_dbo_Accounts_AccountID" FromRole="Transactions" ToRole="Accounts" />
           <NavigationProperty Name="Deposits" Relationship="Self.FK_dbo_Deposits_dbo_Transactions" FromRole="Transactions" ToRole="Deposits" />
           <NavigationProperty Name="Withdrawls" Relationship="Self.FK_dbo_Withdrawals_dbo_Transactions" FromRole="Transactions" ToRole="Withdrawls" />
         </EntityType>
@@ -176,7 +178,7 @@
           <Key>
             <PropertyRef Name="WithdrawalID" />
           </Key>
-          <Property Name="WithdrawalID" Type="Int32" Nullable="false" />
+          <Property Name="WithdrawalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="TransactionID" Type="Int32" Nullable="false" />
           <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
           <NavigationProperty Name="Transactions" Relationship="Self.FK_dbo_Withdrawals_dbo_Transactions" FromRole="Withdrawls" ToRole="Transactions" />

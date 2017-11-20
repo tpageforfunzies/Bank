@@ -1,5 +1,5 @@
 ﻿CREATE TABLE dbo.Accounts (
-	AccountID int NOT NULL,
+	AccountID int IDENTITY(1,1) NOT NULL,
 	AccountNumber int NOT NULL,
 	PIN int NOT NULL,
 	AccountType int NOT NULL,

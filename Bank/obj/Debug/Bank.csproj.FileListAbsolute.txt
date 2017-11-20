@@ -13,3 +13,5 @@ C:\DotNetProjects\Bank\Bank\bin\Debug\EntityFramework.dll
 C:\DotNetProjects\Bank\Bank\bin\Debug\Bank.Models.dll.config
 C:\DotNetProjects\Bank\Bank\bin\Debug\Bank.Services.dll.config
 C:\DotNetProjects\Bank\Bank\bin\Debug\EntityFramework.xml
+C:\DotNetProjects\Bank\Bank\bin\Debug\EntityFramework.SqlServer.dll
+C:\DotNetProjects\Bank\Bank\bin\Debug\EntityFramework.SqlServer.xml

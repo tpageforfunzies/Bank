@@ -1,5 +1,5 @@
 ﻿CREATE TABLE Transactions (
-	TransactionID int NOT NULL,
+	TransactionID int IDENTITY(1,1) NOT NULL,
 	TransactionType int NOT NULL,
 	AccountID int NOT NULL,
 	CONSTRAINT [PK_dbo.Transactions] PRIMARY KEY CLUSTERED ([TransactionID] ASC),

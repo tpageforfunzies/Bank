@@ -4,17 +4,18 @@
     <Key>
       <PropertyRef Name="AccountID" />
     </Key>
-    <Property Name="AccountID" Type="int" Nullable="false" />
+    <Property Name="AccountID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="AccountNumber" Type="int" Nullable="false" />
     <Property Name="PIN" Type="int" Nullable="false" />
     <Property Name="AccountType" Type="int" Nullable="false" />
     <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="Balance" Type="int" />
   </EntityType>
   <EntityType Name="Customers">
     <Key>
       <PropertyRef Name="CustomerID" />
     </Key>
-    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="CustomerID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="FirstName" Type="nvarchar" MaxLength="25" Nullable="false" />
     <Property Name="LastName" Type="nvarchar" MaxLength="25" Nullable="false" />
   </EntityType>
@@ -22,7 +23,7 @@
     <Key>
       <PropertyRef Name="DepositID" />
     </Key>
-    <Property Name="DepositID" Type="int" Nullable="false" />
+    <Property Name="DepositID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TransactionID" Type="int" Nullable="false" />
     <Property Name="Amount" Type="money" Nullable="false" />
   </EntityType>
@@ -30,7 +31,7 @@
     <Key>
       <PropertyRef Name="TransactionID" />
     </Key>
-    <Property Name="TransactionID" Type="int" Nullable="false" />
+    <Property Name="TransactionID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TransactionType" Type="int" Nullable="false" />
     <Property Name="AccountID" Type="int" Nullable="false" />
   </EntityType>
@@ -38,7 +39,7 @@
     <Key>
       <PropertyRef Name="WithdrawalID" />
     </Key>
-    <Property Name="WithdrawalID" Type="int" Nullable="false" />
+    <Property Name="WithdrawalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="TransactionID" Type="int" Nullable="false" />
     <Property Name="Amount" Type="money" Nullable="false" />
   </EntityType>

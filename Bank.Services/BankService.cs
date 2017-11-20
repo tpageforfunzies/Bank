@@ -17,7 +17,15 @@ namespace Bank.Services
                 db.SaveChanges();
                 return db.SaveChanges() == 1;
             }
+        }
 
+        public void CreateAccount(Accounts model)
+        {
+            using (BankDBEntities db = new BankDBEntities())
+            {
+                db.Accounts.Add(model);
+                db.SaveChanges();
+            }
         }
     }
 }

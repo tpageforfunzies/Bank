@@ -9,6 +9,7 @@
           <ScalarProperty Name="PIN" ColumnName="PIN" />
           <ScalarProperty Name="AccountType" ColumnName="AccountType" />
           <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
