@@ -11,7 +11,7 @@ namespace Bank
 {
     public class BankATM
     {
-        public static Accounts CurrentUser { get; set; }
+        public static Accounts CurrentUserAccount { get; set; }
 
         public static void Start()
         {
@@ -25,15 +25,30 @@ namespace Bank
             else
             {
                 LogIn();
+                Console.Clear();
                 Menu();
                 string menuChoice = Console.ReadLine();
                 while (menuChoice != "9")
                 {
                     switch (menuChoice)
                     {
+                        case "1":
+                            Deposit();
+                            Console.Clear();
+                            Menu();
+                            menuChoice = Console.ReadLine();
+                            break;
+
+                        case "2":
+                            Withdrawal();
+                            Console.Clear();
+                            Menu();
+                            menuChoice = Console.ReadLine();
+                            break;
+
                         case "3":
                             Console.Clear();
-                            AccountInfo(CurrentUser);
+                            AccountInfo(CurrentUserAccount);
                             Thread.Sleep(3000);
                             Console.Clear();
                             Menu();
@@ -44,6 +59,7 @@ namespace Bank
                             Console.Clear();
                             Console.WriteLine("Goodbye.");
                             break;
+
                         default:
                             break;
                     }
@@ -110,7 +126,7 @@ namespace Bank
             int pinInput = Int32.Parse(Console.ReadLine());
 
             AccountService svc = new AccountService();
-            CurrentUser = svc.GetAccount(accountInput, pinInput);
+            CurrentUserAccount = svc.GetAccount(accountInput, pinInput);
             
         }
 
@@ -139,6 +155,22 @@ namespace Bank
             Console.WriteLine("3.  Get account information");
             Console.WriteLine("9. Exit");
             Console.WriteLine("***********************************************************");
+        }
+
+        public static void Deposit()
+        {
+            Console.WriteLine("How much would you like to deposit?");
+            int depositAmount = Int32.Parse(Console.ReadLine());
+            var svc = new TransactionService();
+            CurrentUserAccount = svc.MakeDeposit(CurrentUserAccount, depositAmount);
+        }
+
+        public static void Withdrawal()
+        {
+            Console.WriteLine("How much would you like to withdraw?");
+            int withdrawalAmount = Int32.Parse(Console.ReadLine());
+            var svc = new TransactionService();
+            CurrentUserAccount = svc.MakeWithdrawal(CurrentUserAccount, withdrawalAmount);
         }
 
     }
