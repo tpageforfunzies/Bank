@@ -7,8 +7,17 @@ using Bank.Models;
 
 namespace Bank.Services
 {
-    class BankService
+    public class BankService
     {
+        public bool CreateCustomer(Customers model)
+        {
+            using (BankDBEntities db = new BankDBEntities())
+            {
+                db.Customers.Add(model);
+                db.SaveChanges();
+                return db.SaveChanges() == 1;
+            }
 
+        }
     }
 }

@@ -1,0 +1,14 @@
+C:\DotNetProjects\Bank\Bank.Services\obj\Debug\Bank.Services.csproj.CoreCompileInputs.cache
+C:\DotNetProjects\Bank\Bank.Services\bin\Debug\Bank.Services.dll
+C:\DotNetProjects\Bank\Bank.Services\bin\Debug\Bank.Services.pdb
+C:\DotNetProjects\Bank\Bank.Services\bin\Debug\Bank.Models.dll
+C:\DotNetProjects\Bank\Bank.Services\bin\Debug\Bank.Models.pdb
+C:\DotNetProjects\Bank\Bank.Services\obj\Debug\Bank.Services.csprojResolveAssemblyReference.cache
+C:\DotNetProjects\Bank\Bank.Services\obj\Debug\Bank.Services.dll
+C:\DotNetProjects\Bank\Bank.Services\obj\Debug\Bank.Services.pdb
+C:\DotNetProjects\Bank\Bank.Services\bin\Debug\Bank.Services.dll.config
+C:\DotNetProjects\Bank\Bank.Services\bin\Debug\EntityFramework.dll
+C:\DotNetProjects\Bank\Bank.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\DotNetProjects\Bank\Bank.Services\bin\Debug\Bank.Models.dll.config
+C:\DotNetProjects\Bank\Bank.Services\bin\Debug\EntityFramework.xml
+C:\DotNetProjects\Bank\Bank.Services\bin\Debug\EntityFramework.SqlServer.xml

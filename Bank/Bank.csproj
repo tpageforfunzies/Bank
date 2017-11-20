@@ -42,11 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankATM.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bank.Models\Bank.Models.csproj">
+      <Project>{0ce2d284-2d17-4d3f-8e72-c06787a64431}</Project>
+      <Name>Bank.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Bank.Services\Bank.Services.csproj">
+      <Project>{7625a881-2801-4a17-a8d1-3faae615fd65}</Project>
+      <Name>Bank.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

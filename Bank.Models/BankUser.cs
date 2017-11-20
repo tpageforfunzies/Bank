@@ -14,6 +14,6 @@ namespace Bank.Models
 
         public int UserID { get; set; }
 
-        public virtual ICollection<Account> Accounts { get; set; }
+        public virtual ICollection<BankAccount> Accounts { get; set; }
     }
 }

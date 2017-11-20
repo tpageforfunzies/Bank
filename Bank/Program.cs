@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace Bank
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+            BankATM.Start();
 
         }
     }
