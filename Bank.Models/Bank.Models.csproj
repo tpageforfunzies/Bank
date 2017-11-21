@@ -74,6 +74,7 @@
       <DependentUpon>BankModels.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TransactionListItemModel.cs" />
     <Compile Include="Transactions.cs">
       <DependentUpon>BankModels.tt</DependentUpon>
     </Compile>

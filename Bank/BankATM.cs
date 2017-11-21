@@ -172,6 +172,7 @@ namespace Bank
             int depositAmount = Int32.Parse(Console.ReadLine());
             var svc = new TransactionService();
             CurrentUserAccount = svc.MakeDeposit(CurrentUserAccount, depositAmount);
+            Console.WriteLine("Your deposit was succesful.");
         }
 
         public static void Withdrawal()
@@ -180,6 +181,7 @@ namespace Bank
             int withdrawalAmount = Int32.Parse(Console.ReadLine());
             var svc = new TransactionService();
             CurrentUserAccount = svc.MakeWithdrawal(CurrentUserAccount, withdrawalAmount);
+            Console.WriteLine("Your withdrawal was successful.");
         }
 
         public static void PinChange()
