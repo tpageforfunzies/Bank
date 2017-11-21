@@ -10,7 +10,6 @@ namespace Bank
     {
         static void Main(string[] args)
         {
-            BankATM.GetSalt();
             Console.WriteLine("         _._._                       _._._");
             Console.WriteLine("        _|   |_                     _|   |_");
             Console.WriteLine("        | ... |_._._._._._._._._._._| ... |");
