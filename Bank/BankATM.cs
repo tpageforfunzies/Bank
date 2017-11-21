@@ -13,6 +13,8 @@ namespace Bank
     {
         public static Accounts CurrentUserAccount { get; set; }
         
+        
+
         public static void Start()
         {
             Console.WriteLine("Do you have an account?");

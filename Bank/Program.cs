@@ -14,6 +14,7 @@ namespace Bank
             Console.WriteLine("        _|   |_                     _|   |_");
             Console.WriteLine("        | ... |_._._._._._._._._._._| ... |");
             Console.WriteLine("        | ||| |  o NATIONAL BANK o  | ||| |");
+            Console.WriteLine("");
             Console.WriteLine("     WELCOME TO THE FIRST NATIONAL BANK OF TPAGE");
             Console.WriteLine("           PRESS ANY BUTTON TO CONTINUE");
             Console.ReadLine();
