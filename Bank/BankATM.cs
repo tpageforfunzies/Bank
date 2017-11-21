@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Security.Cryptography;
 
 namespace Bank
 {
@@ -106,6 +107,7 @@ namespace Bank
 
             Console.WriteLine("What would you like your pin to be?");
             string userPin = Console.ReadLine();
+            
 
             Console.WriteLine("What would you like your account number to be?");
             string userAccountNumber = Console.ReadLine();
@@ -206,6 +208,5 @@ namespace Bank
             
 
         }
-
     }
 }
