@@ -6,13 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
-using System.Security.Cryptography;
 
 namespace Bank
 {
     public class BankATM
     {
         public static Accounts CurrentUserAccount { get; set; }
+        
+        
 
         public static void Start()
         {
@@ -106,8 +107,7 @@ namespace Bank
             string userType = Console.ReadLine();
 
             Console.WriteLine("What would you like your pin to be?");
-            string userPin = Console.ReadLine();
-            
+            string userPin = Console.ReadLine();      
 
             Console.WriteLine("What would you like your account number to be?");
             string userAccountNumber = Console.ReadLine();
