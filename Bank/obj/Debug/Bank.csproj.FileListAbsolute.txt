@@ -15,3 +15,7 @@ C:\DotNetProjects\Bank\Bank\bin\Debug\Bank.Services.dll.config
 C:\DotNetProjects\Bank\Bank\bin\Debug\EntityFramework.xml
 C:\DotNetProjects\Bank\Bank\bin\Debug\EntityFramework.SqlServer.dll
 C:\DotNetProjects\Bank\Bank\bin\Debug\EntityFramework.SqlServer.xml
+C:\DotNetProjects\Bank\Bank\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\DotNetProjects\Bank\Bank\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\DotNetProjects\Bank\Bank\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\DotNetProjects\Bank\Bank\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

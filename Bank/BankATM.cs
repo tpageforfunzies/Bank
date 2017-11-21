@@ -12,8 +12,6 @@ namespace Bank
     public class BankATM
     {
         public static Accounts CurrentUserAccount { get; set; }
-        
-        
 
         public static void Start()
         {

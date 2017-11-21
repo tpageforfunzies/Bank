@@ -11,14 +11,13 @@ namespace Bank.Services
     {
         public Accounts GetAccount(int num, int pin)
         {
-            using (BankDBEntities db = new BankDBEntities())
-            {
+            BankDBEntities db = new BankDBEntities();
                 return
                     db
                        .Accounts
                        .Where(e => e.AccountNumber == num && e.PIN == pin)
                        .Single();
-            }
+
         }
 
         public void CreateAccount(Accounts model)
