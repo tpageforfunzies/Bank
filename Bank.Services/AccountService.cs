@@ -29,5 +29,21 @@ namespace Bank.Services
                 db.SaveChanges();
             }
         }
+
+        public Accounts ChangePin(Accounts model, int newPin)
+        {
+            using (BankDBEntities db = new BankDBEntities())
+            {
+                var entity =
+                    db
+                    .Accounts
+                       .Where(e => e.AccountNumber == model.AccountNumber && e.PIN == model.PIN)
+                       .Single();
+
+                entity.PIN = newPin;
+                db.SaveChanges();
+                return entity;
+            }
+        }
     }
 }

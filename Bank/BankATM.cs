@@ -55,6 +55,13 @@ namespace Bank
                             menuChoice = Console.ReadLine();
                             break;
 
+                        case "4":
+                            Console.Clear();
+                            PinChange();
+                            Menu();
+                            menuChoice = Console.ReadLine();
+                            break;
+
                         case "9":
                             Console.Clear();
                             Console.WriteLine("Goodbye.");
@@ -153,6 +160,8 @@ namespace Bank
             Console.WriteLine("1.  Make a deposit");
             Console.WriteLine("2.  Make a withdrawal");
             Console.WriteLine("3.  Get account information");
+            Console.WriteLine("4.  Change your PIN");
+            Console.WriteLine("");
             Console.WriteLine("9. Exit");
             Console.WriteLine("***********************************************************");
         }
@@ -171,6 +180,29 @@ namespace Bank
             int withdrawalAmount = Int32.Parse(Console.ReadLine());
             var svc = new TransactionService();
             CurrentUserAccount = svc.MakeWithdrawal(CurrentUserAccount, withdrawalAmount);
+        }
+
+        public static void PinChange()
+        {
+            Console.WriteLine("Enter your current PIN:");
+            int currentPin = Int32.Parse(Console.ReadLine());
+            if (currentPin == CurrentUserAccount.PIN)
+            {
+                Console.WriteLine("What would you like to change your pin to?");
+                int newPin = Int32.Parse(Console.ReadLine());
+                var svc = new AccountService();
+                CurrentUserAccount = svc.ChangePin(CurrentUserAccount, newPin);
+                Console.WriteLine("You have successfully changed your PIN.");
+                Thread.Sleep(2000);
+                Console.Clear();
+                
+            }
+            else
+            {
+                Console.WriteLine("That is not the correct PIN.");
+            }
+            
+
         }
 
     }
