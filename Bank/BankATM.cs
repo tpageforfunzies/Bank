@@ -71,7 +71,7 @@ namespace Bank
                             break;
                     }
                 }
-                
+
             }
 
         }
@@ -105,7 +105,7 @@ namespace Bank
             string userType = Console.ReadLine();
 
             Console.WriteLine("What would you like your pin to be?");
-            string userPin = Console.ReadLine();      
+            string userPin = Console.ReadLine();
 
             Console.WriteLine("What would you like your account number to be?");
             string userAccountNumber = Console.ReadLine();
@@ -134,7 +134,7 @@ namespace Bank
 
             AccountService svc = new AccountService();
             CurrentUserAccount = svc.GetAccount(accountInput, pinInput);
-            
+
         }
 
         public static void AccountInfo(Accounts currentUser)
@@ -197,13 +197,13 @@ namespace Bank
                 Console.WriteLine("You have successfully changed your PIN.");
                 Thread.Sleep(2000);
                 Console.Clear();
-                
+
             }
             else
             {
                 Console.WriteLine("That is not the correct PIN.");
             }
-            
+
 
         }
     }
