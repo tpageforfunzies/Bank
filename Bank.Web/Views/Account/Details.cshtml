@@ -27,13 +27,13 @@
             @if (Model.AccountType == 1)
             {
                 <text>
-                Checking
+                    Checking
                 </text>
             }
             @if (Model.AccountType == 2)
             {
                 <text>
-                Savings
+                    Savings
                 </text>
             }
 
@@ -48,8 +48,16 @@
         </dd>
 
     </dl>
+    @*<div class="row">
+        @using (Html.BeginForm("Index", "Account"))
+        {
+            <input type="submit" value="Access Another Account" class="col-md-6 col-md-offset-3 btn btn-default" />
+        }
+    </div>*@
+
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Deposit", "Deposit") |
+    @Html.ActionLink("Access Another Account", "Index", new { htmlAttributes = new { @class = "btn btn-default", @style = "color:white" } })
 </p>

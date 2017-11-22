@@ -11,8 +11,8 @@ namespace Bank.Services
     {
         public Accounts MakeDeposit(Accounts model, int deposit)
         {
-            using (BankDBEntities db = new BankDBEntities())
-            {
+            BankDBEntities db = new BankDBEntities();
+            
                 var entity =
                     db
                     .Accounts
@@ -23,7 +23,7 @@ namespace Bank.Services
                 UpdateTables(model, 1, deposit);
                 db.SaveChanges();
                 return entity;
-            }
+            
         }
 
         public Accounts MakeWithdrawal(Accounts model, int withdrawal)
