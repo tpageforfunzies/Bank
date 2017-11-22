@@ -49,5 +49,20 @@ namespace Bank.Web.Controllers
 
             return RedirectToAction("Details", account);
         }
+
+        // GET: Withdraw
+        public ActionResult Withdraw()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Withdraw(Withdrawls model)
+        {
+            TransactionService svc = new TransactionService();
+            var account = svc.MakeWithdrawal((Accounts)Session["CurrentUser"], (int)model.Amount);
+
+            return RedirectToAction("Details", account);
+        }
     }
 }
