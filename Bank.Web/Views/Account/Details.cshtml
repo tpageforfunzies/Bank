@@ -48,17 +48,15 @@
         </dd>
 
     </dl>
-    @*<div class="row">
-        @using (Html.BeginForm("Index", "Account"))
-        {
-            <input type="submit" value="Access Another Account" class="col-md-6 col-md-offset-3 btn btn-default" />
-        }
-    </div>*@
 
 </div>
 
 <p>
-    @Html.ActionLink("Deposit", "Deposit") |
-    @Html.ActionLink("Withdraw", "Withdraw") |
-    @Html.ActionLink("Access Another Account", "Index", new { htmlAttributes = new { @class = "btn btn-default", @style = "color:white" } })
+    <row>
+        <input type="button" class="col-md-6 btn btn-success" value="Deposit" onclick="location.href='@Url.Action("Deposit", "Account")'" />
+        <input type="button" class="col-md-6 btn btn-danger" value="Withdraw" onclick="location.href='@Url.Action("Withdraw", "Account")'" />
+    </row>
+    <br />
+    <br />
+    @Html.ActionLink("Access Another Account", "Index")
 </p>

@@ -17,7 +17,7 @@ namespace Bank
         {
             Console.WriteLine("Do you have an account?");
             string hasAccount = Console.ReadLine();
-            if (hasAccount == "no")
+            if (hasAccount.ToLower() == "no")
             {
                 Console.WriteLine("We'll begin with your info, then your account info.");
                 NewCustomerInfo();
