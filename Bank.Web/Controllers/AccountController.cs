@@ -21,6 +21,7 @@ namespace Bank.Web.Controllers
         [HttpPost]
         public ActionResult Index(Accounts model)
         {
+            Session.Clear();
             AccountService svc = new AccountService();
             var account = svc.GetAccount(model.AccountNumber, model.PIN);
             Session["CurrentUser"] = account;
@@ -63,6 +64,26 @@ namespace Bank.Web.Controllers
             var account = svc.MakeWithdrawal((Accounts)Session["CurrentUser"], (int)model.Amount);
 
             return RedirectToAction("Details", account);
+        }
+
+        // GET: Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Create
+        [HttpPost]
+        public ActionResult Create(Accounts model)
+        {
+            model.CustomerID = 2;
+            model.Balance = 0;
+            AccountService svc = new AccountService();
+            svc.CreateAccount(model);
+            Session.Clear();
+            Session["CurrentUser"] = model;
+
+            return RedirectToAction("Details", model);
         }
     }
 }

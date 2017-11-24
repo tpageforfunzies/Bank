@@ -44,7 +44,17 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Balance)
+            @if (Model.Balance == 0)
+            {
+                <text>
+                    It's empty! Better start making some deposits!
+                </text>
+            }
+            @if (Model.Balance > 0)
+            {
+                @Html.DisplayFor(model => model.Balance)
+            }
+
         </dd>
 
     </dl>
