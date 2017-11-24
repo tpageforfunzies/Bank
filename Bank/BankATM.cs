@@ -15,61 +15,63 @@ namespace Bank
 
         public static void Start()
         {
-            Console.WriteLine("Do you have an account?");
-            string hasAccount = Console.ReadLine();
-            if (hasAccount.ToLower() == "no")
+            Menu();
+            string menuChoice = Console.ReadLine();
+            while (menuChoice != "9")
             {
-                Console.WriteLine("We'll begin with your info, then your account info.");
-                NewCustomerInfo();
-            }
-            else
-            {
-                LogIn();
-                Console.Clear();
-                Menu();
-                string menuChoice = Console.ReadLine();
-                while (menuChoice != "9")
+                switch (menuChoice)
                 {
-                    switch (menuChoice)
-                    {
-                        case "1":
-                            Deposit();
-                            Console.Clear();
-                            Menu();
-                            menuChoice = Console.ReadLine();
-                            break;
+                    case "1":
+                        Deposit();
+                        Console.Clear();
+                        Menu();
+                        menuChoice = Console.ReadLine();
+                        break;
 
-                        case "2":
-                            Withdrawal();
-                            Console.Clear();
-                            Menu();
-                            menuChoice = Console.ReadLine();
-                            break;
+                    case "2":
+                        Withdrawal();
+                        Console.Clear();
+                        Menu();
+                        menuChoice = Console.ReadLine();
+                        break;
 
-                        case "3":
-                            Console.Clear();
-                            AccountInfo(CurrentUserAccount);
-                            Thread.Sleep(3000);
-                            Console.Clear();
-                            Menu();
-                            menuChoice = Console.ReadLine();
-                            break;
+                    case "3":
+                        Console.Clear();
+                        AccountInfo(CurrentUserAccount);
+                        Thread.Sleep(3000);
+                        Console.Clear();
+                        Menu();
+                        menuChoice = Console.ReadLine();
+                        break;
 
-                        case "4":
-                            Console.Clear();
-                            PinChange();
-                            Menu();
-                            menuChoice = Console.ReadLine();
-                            break;
+                    case "4":
+                        Console.Clear();
+                        PinChange();
+                        Menu();
+                        menuChoice = Console.ReadLine();
+                        break;
 
-                        case "9":
-                            Console.Clear();
-                            Console.WriteLine("Goodbye.");
-                            break;
+                    case "7":
+                        Console.Clear();
+                        LogIn();
+                        Console.Clear();
+                        Menu();
+                        menuChoice = Console.ReadLine();
+                        break;
 
-                        default:
-                            break;
-                    }
+                    case "8":
+                        Console.Clear();
+                        NewCustomerInfo();
+
+                        break;
+
+                    case "9":
+                        Console.Clear();
+                        Console.WriteLine("Goodbye.");
+                        break;
+
+                    default:
+                        break;
                 }
 
             }
@@ -162,7 +164,9 @@ namespace Bank
             Console.WriteLine("3.  Get account information");
             Console.WriteLine("4.  Change your PIN");
             Console.WriteLine("");
-            Console.WriteLine("9. Exit");
+            Console.WriteLine("7.  Log in to your account");
+            Console.WriteLine("8.  Create your Account");
+            Console.WriteLine("9.  Exit");
             Console.WriteLine("***********************************************************");
         }
 

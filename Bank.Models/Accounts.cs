@@ -11,8 +11,7 @@ namespace Bank.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Accounts
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -26,7 +25,6 @@ namespace Bank.Models
         public int PIN { get; set; }
         public int AccountType { get; set; }
         public int CustomerID { get; set; }
-        [DisplayFormat(DataFormatString = "{0:C}", ApplyFormatInEditMode = true)]
         public Nullable<int> Balance { get; set; }
     
         public virtual Customers Customers { get; set; }
