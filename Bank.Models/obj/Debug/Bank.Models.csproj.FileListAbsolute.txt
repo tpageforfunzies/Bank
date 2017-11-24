@@ -9,3 +9,7 @@ C:\DotNetProjects\Bank\Bank.Models\bin\Debug\EntityFramework.dll
 C:\DotNetProjects\Bank\Bank.Models\bin\Debug\EntityFramework.SqlServer.dll
 C:\DotNetProjects\Bank\Bank.Models\bin\Debug\EntityFramework.xml
 C:\DotNetProjects\Bank\Bank.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\DotNetProjects\Bank\Bank.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\DotNetProjects\Bank\Bank.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\DotNetProjects\Bank\Bank.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\DotNetProjects\Bank\Bank.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml

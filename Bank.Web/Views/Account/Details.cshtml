@@ -1,0 +1,72 @@
+﻿@model Bank.Models.Accounts
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Accounts</h4>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountType)
+        </dt>
+
+        <dd>
+            @if (Model.AccountType == 1)
+            {
+                <text>
+                    Checking
+                </text>
+            }
+            @if (Model.AccountType == 2)
+            {
+                <text>
+                    Savings
+                </text>
+            }
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            @if (Model.Balance == 0)
+            {
+                <text>
+                    It's empty! Better start making some deposits!
+                </text>
+            }
+            @if (Model.Balance > 0)
+            {
+                @Html.DisplayFor(model => model.Balance)
+            }
+
+        </dd>
+
+    </dl>
+
+</div>
+
+<p>
+    <row>
+        <input type="button" class="col-md-6 btn btn-success" value="Deposit" onclick="location.href='@Url.Action("Deposit", "Account")'" />
+        <input type="button" class="col-md-6 btn btn-danger" value="Withdraw" onclick="location.href='@Url.Action("Withdraw", "Account")'" />
+    </row>
+    <br />
+    <br />
+    @Html.ActionLink("Access Another Account", "Index")
+</p>
