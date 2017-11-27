@@ -1,0 +1,15 @@
+C:\DotNetProjects\Bank\Bank.Models\bin\Release\Bank.Models.dll.config
+C:\DotNetProjects\Bank\Bank.Models\bin\Release\Bank.Models.dll
+C:\DotNetProjects\Bank\Bank.Models\bin\Release\Bank.Models.pdb
+C:\DotNetProjects\Bank\Bank.Models\bin\Release\EntityFramework.dll
+C:\DotNetProjects\Bank\Bank.Models\bin\Release\EntityFramework.SqlServer.dll
+C:\DotNetProjects\Bank\Bank.Models\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\DotNetProjects\Bank\Bank.Models\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\DotNetProjects\Bank\Bank.Models\bin\Release\EntityFramework.xml
+C:\DotNetProjects\Bank\Bank.Models\bin\Release\EntityFramework.SqlServer.xml
+C:\DotNetProjects\Bank\Bank.Models\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\DotNetProjects\Bank\Bank.Models\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\DotNetProjects\Bank\Bank.Models\obj\Release\Bank.Models.csprojResolveAssemblyReference.cache
+C:\DotNetProjects\Bank\Bank.Models\obj\Release\Bank.Models.csproj.CoreCompileInputs.cache
+C:\DotNetProjects\Bank\Bank.Models\obj\Release\Bank.Models.dll
+C:\DotNetProjects\Bank\Bank.Models\obj\Release\Bank.Models.pdb

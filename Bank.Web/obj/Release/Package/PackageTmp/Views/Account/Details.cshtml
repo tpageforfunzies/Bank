@@ -1,0 +1,75 @@
+﻿@model Bank.Models.Accounts
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2 style="text-align: center">Your Account Details</h2>
+
+<div class="centered">
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountNumber)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AccountNumber)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AccountType)
+        </dt>
+
+        <dd>
+            @if (Model.AccountType == 1)
+            {
+                <text>
+                    Checking
+                </text>
+            }
+            @if (Model.AccountType == 2)
+            {
+                <text>
+                    Savings
+                </text>
+            }
+
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Balance)
+        </dt>
+
+        <dd>
+            @if (Model.Balance == 0)
+            {
+                <text>
+                    It's empty! Better start making some deposits!
+                </text>
+            }
+            @if (Model.Balance > 0)
+            {
+                @Html.DisplayFor(model => model.Balance)
+            }
+
+        </dd>
+
+    </dl>
+
+</div>
+
+<div>
+    <p>
+        <row>
+            <input type="button" class="col-md-6 btn btn-success" value="Deposit" onclick="location.href='@Url.Action("Deposit", "Account")'" />
+            <input type="button" class="col-md-6 btn btn-danger" value="Withdraw" onclick="location.href='@Url.Action("Withdraw", "Account")'" />
+        </row>
+
+        <row>
+            <input type="button" class="col-md-6 btn btn-warning" value="Access Another Account" onclick="location.href='@Url.Action("Index", "Account")'" />
+            <input type="button" class="col-md-6 btn btn-primary" value="Change Your PIN" onclick="location.href='@Url.Action("ChangePIN", "Account")'" />
+        </row>
+    </p>
+</div>
