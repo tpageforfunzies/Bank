@@ -59,8 +59,8 @@
     </div>
 }
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
+<div class="createaccess">
+    <input type="button" class="col-md-6 btn btn-warning" value="Access Another Account" onclick="location.href='@Url.Action("Index", "Account")'" />
 </div>
 
 @section Scripts {
