@@ -14,5 +14,18 @@
 }
 
 .centered {
-    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+.offset {
+    padding-left: 10%;
+}
+
+.indexbutton {
+    padding-left: 25%;
+}
+
+.createbutton {
+    padding-left: 22%;
 }
