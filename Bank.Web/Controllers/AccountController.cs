@@ -85,5 +85,22 @@ namespace Bank.Web.Controllers
 
             return RedirectToAction("Details", model);
         }
+
+        // GET: ChangePIN
+        public ActionResult ChangePIN()
+        {
+            return View();
+        }
+        
+        // POST: ChangePIN
+        [HttpPost]
+        public ActionResult ChangePin(Accounts model)
+        {
+            AccountService svc = new AccountService();
+            int newPIN = model.PIN;
+            svc.ChangePin((Accounts)Session["CurrentUser"], model.PIN);
+
+            return RedirectToAction("Details", (Accounts)Session["CurrentUser"]);
+        }
     }
 }

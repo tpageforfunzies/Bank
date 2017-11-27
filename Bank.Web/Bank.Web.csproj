@@ -198,6 +198,7 @@
     <Content Include="Views\Account\Withdraw.cshtml" />
     <Content Include="Views\Account\Create.cshtml" />
     <Content Include="Views\Account\Success.cshtml" />
+    <Content Include="Views\Account\ChangePIN.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

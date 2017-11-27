@@ -4,10 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Your Account Details</h2>
 
 <div>
-    <h4>Accounts</h4>
     <hr />
     <dl class="dl-horizontal">
 
@@ -68,5 +67,8 @@
     </row>
     <br />
     <br />
-    @Html.ActionLink("Access Another Account", "Index")
+    <row>
+        <input type="button" class="col-md-6 btn btn-primary" value="Access Another Account" onclick="location.href='@Url.Action("Index", "Account")'" />
+        <input type="button" class="col-md-6 btn btn-warning" value="Change Your PIN" onclick="location.href='@Url.Action("ChangePIN", "Account")'" />
+    </row>
 </p>
